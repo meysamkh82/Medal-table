@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><%=pageTitle%></title>
+    <link rel="stylesheet" href="./bootstrap.min.css">
+        <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+
+    <h2 class="text-center my-5">جدول مدال ها</h2>
+    <table class="table1">
+        <thead>
+            <th>رتبه</th>
+            <th>نام تیم</th>
+            <th>طلا 🥇</th>
+            <th>نقره 🥈</th>
+            <th>برنز 🥉</th>
+            <th>مجموع</th>
+        </thead>
+        <tbody>
+            <%for(let team of teams){%>
+            <tr>
+                <td><%=++rank%></td>
+                <td> <%=team.name%> <span class="color-team mx-2" style="background:<%=team.color%>;border:1px solid black"></span></td>
+                <td><%=team.gold%></td>
+                <td><%=team.silver%></td>
+                <td><%=team.bronze%></td>
+                <td><%=team.total%></td>
+            </tr>
+            <%}%>
+        </tbody>
+    </table>
+        <div class=" my-5">
+
+                <div class="col d-flex">
+                    <a href="/create" class="btn btn-info mx-2">اضافه کردن تیم</a>
+                    <a href="/edit" class="btn btn-primary">تغییرات</a>
+                </div>
+
+        </div>
+</body>
+</html>
